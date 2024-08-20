@@ -6,6 +6,10 @@ def reverse_char(char):
 
     if char in alphabets.upper():
         alphabets=alphabets.upper()
+    
+    #Return char if not valid alphabet
+    if char not in alphabets and char not in alphabets.upper():
+        return char 
 
     #find index of character
     index_of_char=alphabets.index(char)
@@ -21,8 +25,14 @@ def reverse_char(char):
 # print(reverse('c')=='x')
 # x=reverse_char('A')
 # print(x)
+#git add .
+#git commit -m"reverse a single character"
+#git push
 def atbash(txt):
+    reverseTxt=""
     for char in txt:
-        print(char)
-
-atbash("Hello")
+        reverseTxt+= reverse_char(char)
+    return reverseTxt
+       
+y=atbash("Hello 14")
+print(y)
